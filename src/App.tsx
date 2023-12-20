@@ -1,25 +1,26 @@
 import { useState } from 'react';
+import { HiPlus, HiMinus } from 'react-icons/hi2';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import { HiX } from 'react-icons/hi';
 import './App.css';
 
-function App() {
+function App(): React.JSX.Element {
   const [count, setCount] = useState(0);
+  const SomeIcon = count % 2 === 0 ? HiPlus : HiMinus;
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
+        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
+        <a href="https://react.dev" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
       <h1>Vite + React</h1>
       <p>
-        <HiX />
+        <SomeIcon />
       </p>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
